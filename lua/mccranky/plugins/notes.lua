@@ -5,20 +5,27 @@ return {
       {
         "mattn/calendar-vim",
         config = function()
-          vim.keymap.set("n", "<localleader>cal", "<Cmd>Calendar<CR>")
-          vim.keymap.set("n", "<localleader>cah", "<Cmd>CalendarH<CR>")
-          vim.keymap.set("n", "<localleader>cat", "<Cmd>CalendarT<CR>")
+          vim.keymap.set("n", "<leader>cat", "<Cmd>CalendarT<CR>")
         end,
       },
     },
     init = function()
+      vim.g.vimwiki_global_ext = 0
       vim.g.vimwiki_list = {
         {
-          path = "~/Documents/VimWiki",
+          path = "~/Documents/Wiki/vimwiki",
           syntax = "default",
           ext = ".wiki",
         },
+        {
+          path = "~/Documents/Wiki/markdown",
+          syntax = "markdown",
+          ext = ".md",
+        },
       }
+    end,
+    config = function()
+      vim.keymap.set({ "n", "v" }, "<localleader>tl", "<Plug>VimwikiToggleListItem")
     end,
   },
   {
