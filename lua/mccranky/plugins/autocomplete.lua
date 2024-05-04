@@ -1,6 +1,6 @@
 return {
   "zbirenbaum/copilot-cmp",
-  after = { "copilot.lua", "nvim-cmp" }, -- race condition with lazy loading
+  after = { "copilot.lua", "nvim-cmp" }, -- race condition
   dependencies = {
     { "uga-rosa/cmp-dictionary", lazy = true }, -- not necessarily lazy
   },
