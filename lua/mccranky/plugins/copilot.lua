@@ -31,7 +31,7 @@ return {
         markdown = true,
         javascript = true,
         typescript = true,
-        pythob = true,
+        python = true,
         lua = true,
         ["*"] = false, -- disable for all other filetypes and ignore default `filetypes`
       },
