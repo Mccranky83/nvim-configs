@@ -2,7 +2,7 @@ return {
   "max397574/better-escape.nvim",
   config = function()
     require("better_escape").setup({
-      mapping = { "jk", "jl", "Jk", "JK" },
+      mapping = { "jj", "jk", "jl" },
       timeout = vim.o.timeoutlen, -- Use option timeoutlen by default
       clear_empty_lines = false,
       keys = function()
