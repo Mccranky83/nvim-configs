@@ -150,6 +150,7 @@ return {
             "javascriptreact",
             "typescript",
             "javascript",
+            "markdown",
             "css",
             "sass",
             "scss",
