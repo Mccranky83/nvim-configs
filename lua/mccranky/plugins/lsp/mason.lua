@@ -41,6 +41,7 @@ return {
         "rust_analyzer",
         "texlab",
         "bashls",
+        "jdtls",
       },
     })
 
@@ -52,6 +53,7 @@ return {
         "black", -- python formatter
         "pylint", -- python linter
         "eslint_d", -- js linter
+        "google-java-format", -- java formatter
         "shfmt", -- shell formatter
         "shellcheck", -- shell linter
       },

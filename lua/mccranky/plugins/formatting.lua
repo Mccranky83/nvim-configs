@@ -24,6 +24,7 @@ return {
           liquid = { "prettier" },
           lua = { "stylua" },
           python = { "isort", "black" },
+          java = { "google-java-format" },
           sh = { "shfmt" },
           bash = { "shfmt" },
           zsh = { "shfmt" },
