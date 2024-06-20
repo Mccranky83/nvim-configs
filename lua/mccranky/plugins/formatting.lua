@@ -27,7 +27,6 @@ return {
           java = { "google-java-format" },
           sh = { "shfmt" },
           bash = { "shfmt" },
-          zsh = { "shfmt" },
         },
         format_on_save = {
           lsp_fallback = true,

@@ -38,10 +38,8 @@ return {
         "prismals",
         "pyright",
         "clangd",
-        "rust_analyzer",
         "texlab",
         "bashls",
-        "jdtls",
       },
     })
 

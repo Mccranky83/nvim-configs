@@ -33,6 +33,7 @@ return {
         typescript = true,
         python = true,
         lua = true,
+        java = true,
         ["*"] = false, -- disable for all other filetypes and ignore default `filetypes`
       },
       copilot_node_command = "node", -- Node.js version must be > 18.x
