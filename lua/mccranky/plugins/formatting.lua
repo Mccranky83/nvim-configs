@@ -20,7 +20,7 @@ return {
           jsonc = { "prettier" },
           yaml = { "prettier" },
           markdown = { "prettier" },
-          go = { "goimports", "gofmt" },
+          -- go = { "goimports", "gofmt" },
           liquid = { "prettier" },
           lua = { "stylua" },
           python = { "isort", "black" },

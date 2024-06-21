@@ -54,6 +54,8 @@ return {
         "google-java-format", -- java formatter
         "shfmt", -- shell formatter
         "shellcheck", -- shell linter
+        -- "goimports", -- go formatter
+        -- "gofmt", -- go formatter
       },
     })
   end,
