@@ -1,13 +1,49 @@
 return {
   "max397574/better-escape.nvim",
   config = function()
+    -- Replacement for deprecated clear_empty_lines method
+    local clear_empty_lines = function()
+      vim.api.nvim_input("<esc>")
+      local current_line = vim.api.nvim_get_current_line()
+      if current_line:match("^%s+$") then
+        vim.schedule(function()
+          vim.api.nvim_set_current_line("")
+        end)
+      end
+    end
     require("better_escape").setup({
-      mapping = { "jj", "jk", "jl" },
-      timeout = vim.o.timeoutlen, -- Use option timeoutlen by default
-      clear_empty_lines = false,
-      keys = function()
-        return vim.api.nvim_win_get_cursor(0)[2] > 1 and "<esc>l" or "<esc>"
-      end, -- keys used for escaping, if it is a function will use the result everytime
+      timeout = vim.o.timeoutlen,
+      mappings = {
+        i = {
+          j = {
+            k = "<Esc>",
+            j = "<Esc>",
+            l = clear_empty_lines,
+          },
+        },
+        c = {
+          j = {
+            k = "<Esc>",
+            j = "<Esc>",
+          },
+        },
+        t = {
+          j = {
+            k = "<Esc>",
+            j = "<Esc>",
+          },
+        },
+        v = {
+          j = {
+            k = "<Esc>",
+          },
+        },
+        s = {
+          j = {
+            k = "<Esc>",
+          },
+        },
+      },
     })
   end,
 }
