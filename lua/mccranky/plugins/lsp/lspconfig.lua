@@ -86,7 +86,7 @@ return {
         })
       end,
       ["tsserver"] = function()
-        lspconfig["tsserver"].setup({
+        lspconfig["ts_ls"].setup({
           capabilities = capabilities,
           init_options = {
             -- ensure that @vue/typescript-plugin and volar are of identical versions
