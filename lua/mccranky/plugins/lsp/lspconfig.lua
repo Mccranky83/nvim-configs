@@ -5,6 +5,11 @@ return {
     { "hrsh7th/cmp-nvim-lsp", event = "InsertEnter" }, -- registered after insert-mode
     { "antosha417/nvim-lsp-file-operations", config = true },
     { "folke/neodev.nvim", opts = {} },
+    {
+      "mrcjkb/rustaceanvim",
+      version = "^5", -- Recommended
+      lazy = false, -- This plugin is already lazy
+    },
   },
   config = function()
     -- import lspconfig plugin
@@ -81,9 +86,11 @@ return {
     mason_lspconfig.setup_handlers({
       -- default handler for installed servers
       function(server_name)
-        lspconfig[server_name].setup({
-          capabilities = capabilities,
-        })
+        if server_name ~= "rust_analyzer" then
+          lspconfig[server_name].setup({
+            capabilities = capabilities,
+          })
+        end
       end,
       ["tsserver"] = function()
         lspconfig["ts_ls"].setup({
