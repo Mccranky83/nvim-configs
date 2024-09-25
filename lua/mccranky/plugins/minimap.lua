@@ -27,6 +27,10 @@ return {
     vim.api.nvim_command("hi MinimapRangeDiffLine ctermfg=Green guifg=#e67e80 guibg=#2d353b")
     vim.g.minimap_range_diff_color = "MinimapRangeDiffLine"
 
-    vim.keymap.set("n", "<leader>mm", "<Cmd>MinimapToggle<CR>")
+    local initial_win_id = vim.api.nvim_get_current_win()
+    vim.keymap.set("n", "<leader>mm", function()
+      vim.fn.win_gotoid(initial_win_id)
+      vim.cmd("MinimapToggle")
+    end)
   end,
 }
