@@ -27,10 +27,38 @@ return {
     vim.api.nvim_command("hi MinimapRangeDiffLine ctermfg=Green guifg=#e67e80 guibg=#2d353b")
     vim.g.minimap_range_diff_color = "MinimapRangeDiffLine"
 
-    local initial_win_id = vim.api.nvim_get_current_win()
+    local previous_win_id = nil
+    local minimap_win_id = nil
+
     vim.keymap.set("n", "<leader>mm", function()
-      vim.fn.win_gotoid(initial_win_id)
-      vim.cmd("MinimapToggle")
+      if minimap_win_id and vim.api.nvim_win_is_valid(minimap_win_id) then
+        -- Minimap is open, close it and switch back to the previous window
+        vim.fn.win_gotoid(previous_win_id)
+        vim.cmd("MinimapToggle")
+        minimap_win_id = nil
+      else
+        -- Minimap is not open, open it and store the current window ID
+        previous_win_id = vim.api.nvim_get_current_win()
+        vim.cmd("MinimapToggle")
+      end
     end)
+
+    -- Autocommand to store minimap window ID when cursor moves to it
+    vim.api.nvim_create_autocmd("WinEnter", {
+      callback = function()
+        if vim.bo.filetype == "minimap" then
+          minimap_win_id = vim.api.nvim_get_current_win()
+        end
+      end,
+    })
+
+    -- Autocommand to check if current window is minimap window when :q is run
+    vim.api.nvim_create_autocmd("QuitPre", {
+      callback = function()
+        if vim.api.nvim_get_current_win() == minimap_win_id then
+          vim.fn.win_gotoid(previous_win_id)
+        end
+      end,
+    })
   end,
 }
