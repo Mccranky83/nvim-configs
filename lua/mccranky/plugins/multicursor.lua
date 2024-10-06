@@ -61,8 +61,8 @@ return {
     vim.keymap.set("v", "s", mc.splitCursors)
 
     -- Append/insert for each line of visual selections.
-    vim.keymap.set("v", "I", mc.insertVisual)
-    vim.keymap.set("v", "A", mc.appendVisual)
+    -- vim.keymap.set("v", "I", mc.insertVisual)
+    -- vim.keymap.set("v", "A", mc.appendVisual)
 
     -- match new cursors within visual selections by regex.
     vim.keymap.set("v", "M", mc.matchCursors)
