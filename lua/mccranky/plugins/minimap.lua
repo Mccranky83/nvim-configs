@@ -41,7 +41,7 @@ return {
         previous_win_id = vim.api.nvim_get_current_win()
         vim.cmd("MinimapToggle")
       end
-    end)
+    end, { desc = "Toggle minimap" })
 
     -- Autocommand to store minimap window ID when cursor moves to it
     vim.api.nvim_create_autocmd("WinEnter", {
