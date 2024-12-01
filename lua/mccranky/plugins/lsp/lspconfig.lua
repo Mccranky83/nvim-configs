@@ -92,6 +92,18 @@ return {
           })
         end
       end,
+      ["clangd"] = function()
+        lspconfig["clangd"].setup({
+          capabilities = {
+            offsetEncoding = { "utf-16" },
+            textDocument = {
+              completion = {
+                editsNearCursor = true,
+              },
+            },
+          },
+        })
+      end,
       ["ts_ls"] = function()
         lspconfig["ts_ls"].setup({
           capabilities = capabilities,
