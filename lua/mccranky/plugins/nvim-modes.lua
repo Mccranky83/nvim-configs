@@ -2,6 +2,7 @@ return {
   {
     -- Table Mode
     "dhruvasagar/vim-table-mode",
+    event = "VeryLazy",
     config = function()
       -- Markdown-compatible tables
       vim.g.table_mode_corner = "|"
@@ -15,6 +16,7 @@ return {
   {
     -- Diff Mode
     "chrisbra/vim-diff-enhanced",
+    event = "VeryLazy",
     config = function()
       vim.keymap.set("n", "<leader>ede", "<cmd>PatienceDiff<CR>", { desc = "Generate new Patience Diff" })
       vim.keymap.set("n", "<leader>edd", "<cmd>EnhancedDiffDisable<CR>", { desc = "Disable EnhancedDiff" })

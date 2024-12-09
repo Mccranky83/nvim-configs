@@ -1,5 +1,6 @@
 return {
   "zbirenbaum/copilot-cmp",
+  event = "VeryLazy",
   after = { "copilot.lua", "nvim-cmp" }, -- race condition
   dependencies = {
     { "uga-rosa/cmp-dictionary", lazy = true },

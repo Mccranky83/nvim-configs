@@ -2,6 +2,7 @@ return {
   { "nvchad/volt", lazy = true },
   {
     "nvchad/minty",
+    event = "VeryLazy",
     config = function()
       vim.keymap.set("n", "<leader>mc", function()
         require("minty.huefy").open({ border = true })

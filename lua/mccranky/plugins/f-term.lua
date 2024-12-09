@@ -1,5 +1,6 @@
 return {
   "numToStr/FTerm.nvim",
+  event = "VeryLazy",
   config = function()
     local fterm = require("FTerm")
 

@@ -1,5 +1,6 @@
 return {
   "wfxr/minimap.vim",
+  event = "VeryLazy",
   init = function()
     vim.g.minimap_width = 30
     vim.g.minimap_left = false

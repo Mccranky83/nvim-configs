@@ -1,9 +1,11 @@
 return {
   {
     "vimwiki/vimwiki",
+    event = "VeryLazy",
     dependencies = {
       {
         "mattn/calendar-vim",
+        lazy = true,
         config = function()
           vim.keymap.set("n", "<leader>cat", "<Cmd>CalendarT<CR>")
         end,
