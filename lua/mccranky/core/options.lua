@@ -1,5 +1,24 @@
 local opt = vim.opt -- for conciseness
 
+-- font settings
+opt.guifont = "Rec Mono Duotone:h15"
+
+-- file encodings
+local encodings = {
+  "utf-8",
+  "gbk",
+  "shift-jis",
+  "latin1",
+  "iso-2022-jp",
+  "euc-jp",
+  "ucs-2le",
+  "ucs-2be",
+  "utf-16le",
+  "utf-16be",
+}
+opt.encoding = "utf-8"
+opt.fileencodings = table.concat(encodings, ",")
+
 -- line numbers
 opt.relativenumber = true -- show relative line numbers
 opt.number = true -- shows absolute line number on cursor line (when relative number is on)
@@ -59,3 +78,6 @@ opt.shada = "!,'3000,<1000,s1000,h"
 -- spell checking
 opt.spell = false
 opt.spelllang = { "en_us" }
+
+-- session settings
+vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
