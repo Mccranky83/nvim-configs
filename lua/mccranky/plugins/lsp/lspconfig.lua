@@ -128,6 +128,17 @@ return {
           },
         })
       end,
+      ["bashls"] = function()
+        lspconfig["bashls"].setup({
+          capabilities = capabilities,
+          filetypes = { "bash", "sh", "zsh" },
+          settings = {
+            bashIde = {
+              globPattern = "*@(.sh|.inc|.bash|.zsh|.command)",
+            },
+          },
+        })
+      end,
       ["svelte"] = function()
         -- configure svelte server
         lspconfig["svelte"].setup({
