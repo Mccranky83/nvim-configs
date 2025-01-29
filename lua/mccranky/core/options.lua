@@ -63,6 +63,14 @@ opt.splitbelow = true -- split horizontal window to the bottom
 -- turn off swapfile
 opt.swapfile = false
 
+-- turn on persistent undo
+opt.undofile = true
+local target_path = vim.fn.expand("~/.undodir")
+if vim.fn.isdirectory(target_path) == 0 then
+  vim.fn.mkdir(target_path, "p", "0700")
+end
+opt.undodir = target_path
+
 -- fold options
 opt.foldcolumn = "1" -- '0' is not bad
 opt.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
@@ -80,4 +88,4 @@ opt.spell = false
 opt.spelllang = { "en_us" }
 
 -- session settings
-vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
+opt.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
