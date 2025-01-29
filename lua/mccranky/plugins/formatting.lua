@@ -22,7 +22,6 @@ return {
           markdown = { "prettier" },
           liquid = { "prettier" },
           lua = { "stylua" },
-          python = { "isort", "blue" },
           java = { "google-java-format" },
           sh = { "shfmt" },
           bash = { "shfmt" },
