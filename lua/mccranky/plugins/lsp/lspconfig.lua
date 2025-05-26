@@ -88,7 +88,7 @@ return {
       },
     })
 
-    mason_lspconfig.setup_handlers({
+    mason_lspconfig.setup({
       -- default handler for installed servers
       function(server_name)
         if server_name ~= "rust_analyzer" then
