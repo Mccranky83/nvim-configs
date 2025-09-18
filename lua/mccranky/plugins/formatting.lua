@@ -22,9 +22,9 @@ return {
           markdown = { "prettier" },
           liquid = { "prettier" },
           lua = { "stylua" },
-          java = { "google-java-format" },
           sh = { "shfmt" },
           bash = { "shfmt" },
+          python = { "blue" },
         },
         format_on_save = {
           lsp_fallback = true,

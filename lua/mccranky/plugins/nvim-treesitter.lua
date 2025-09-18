@@ -42,7 +42,6 @@ return {
         "gitignore",
         "query",
         "python",
-        "java",
       },
       ignore_install = {},
       modules = {},

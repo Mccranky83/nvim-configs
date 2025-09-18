@@ -36,7 +36,7 @@ return {
         "graphql",
         "emmet_ls",
         "prismals",
-        "ruff",
+        "pyright",
         "clangd",
         "texlab",
         "bashls",
@@ -48,7 +48,7 @@ return {
         "prettier", -- prettier formatter
         "stylua", -- lua formatter
         "eslint_d", -- js linter
-        "google-java-format", -- java formatter
+        "blue", -- python formatter
         "shfmt", -- shell formatter
         "shellcheck", -- shell linter
       },
