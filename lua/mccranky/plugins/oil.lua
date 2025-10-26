@@ -3,8 +3,9 @@ return {
   ---@module 'oil'
   ---@type oil.SetupOpts
   opts = {},
+  lazy = true,
+  cmd = "Oil",
   dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if you prefer nvim-web-devicons
-  lazy = false,
   config = function()
     require("oil").setup({
       -- Oil will take over directory buffers (e.g. `vim .` or `:e src/`)
