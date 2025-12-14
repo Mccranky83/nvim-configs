@@ -7,6 +7,12 @@ return {
   build = "make tiktoken",
   event = "VeryLazy",
   opts = {
+    model = "gemini-2.5-pro",
+    temperature = 1.0,
+    window = {
+      layout = "vertical", -- 'vertical', 'horizontal', 'float'
+      width = 0.5,
+    },
     show_help = true,
     auto_follow_cursor = true,
     auto_insert_mode = false,
