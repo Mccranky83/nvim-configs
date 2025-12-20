@@ -35,6 +35,16 @@ return {
         inc_rename = false, -- enables an input dialog for inc-rename.nvim
         lsp_doc_border = false, -- add a border to hover docs and signature help
       },
+      notify = {
+        enabled = true,
+        view = "notify",
+      },
+    })
+    require("notify").setup({
+      timeout = 1500, -- In milliseconds
+      render = "minimal", -- Options: default, minimal, simple, compact, wrapped-compact
+      stages = "static", -- Default: fade_in_slide_out. Options: fade, slide, static
+      minimum_width = 30, -- Default: 50
     })
   end,
 }
