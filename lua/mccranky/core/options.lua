@@ -5,6 +5,7 @@ opt.guifont = "Rec Mono Duotone:h15"
 
 -- file encodings
 local encodings = {
+  "ucs-bom", -- Check for a BOM; otherwise, guess from the list below.
   "utf-8",
   "gbk",
   "shift-jis",
