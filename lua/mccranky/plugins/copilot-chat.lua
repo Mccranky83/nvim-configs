@@ -7,8 +7,8 @@ return {
   build = "make tiktoken",
   event = "VeryLazy",
   opts = {
-    model = "auto",
-    temperature = 1.0,
+    model = "claude-sonnet-5.5",
+    temperature = 0.1,
     window = {
       layout = "vertical",
       width = 0.5,
